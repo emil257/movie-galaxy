@@ -1,18 +1,20 @@
 import React from 'react'
+import {Container} from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
 
 const useStyles = makeStyles({
-  root: {
-    paddingTop: 64
+  container: {
+    paddingTop: '2rem',
+    minHeight: 'calc(100vh - 48px)',
+
   },
 });
-
-export default function Container(props) {
+export default function AppContainer(props) {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <Container maxWidth="lg" className={classes.container}>
       {props.children}
-    </div>
+    </Container>
   )
 }
