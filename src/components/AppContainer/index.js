@@ -7,7 +7,6 @@ const useStyles = makeStyles({
   container: {
     paddingTop: '2rem',
     minHeight: 'calc(100vh - 48px)',
-
   },
 });
 export default function AppContainer(props) {

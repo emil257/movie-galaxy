@@ -16,9 +16,10 @@ class App extends Component {
         <AppContainer>
           <Switch>
             {
-              routes.map(r => {
+              routes.map((r, index) => {
                 return (
                   <Route
+                    key={index}
                     exact={r.exact}
                     path={r.path}
                     component={r.component}

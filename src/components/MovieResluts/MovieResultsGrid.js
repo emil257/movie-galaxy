@@ -1,6 +1,5 @@
 import React from 'react'
 import { Grid, Pagination } from '@mui/material'
-import { useSelector } from 'react-redux'
 import {isEmpty} from 'lodash'
 import MovieResultItem from './MovieReslutItem'
 import { isUndefined } from 'lodash'
@@ -20,9 +19,6 @@ export default function MovieResultsGrid(props) {
 
   const [page, setPage] = React.useState(props.page)
 
-  const movieResults = useSelector(state => state.Movies.movieResults)
-  const movieResultsCount = useSelector(state => state.Movies.movieResultsCount)
-
   const handleSetPage = (event, value) => {
     setPage(value)
     props.handleSetPage(value)
@@ -38,15 +34,15 @@ export default function MovieResultsGrid(props) {
 
   return (
     <div className={classes.gridContainer}>
-      <Grid container xs={12} spacing={2} >
+      <Grid container spacing={2} >
         {
-          isEmpty(movieResults) ? '':
-          movieResults.map(movie => <MovieResultItem movie={movie}/>)
+          isEmpty(props.movies) ? '' :
+          props.movies.map((movie, index) => <MovieResultItem key={index} movie={movie}/>)
         }
         {
           !isUndefined(props.page) && !isUndefined(props.handleSetPage) ?
           <Grid item xs={12} container justifyContent="center">
-            <Pagination count={processAmmountOfPages(movieResultsCount)} color="primary" page={page} onChange={handleSetPage} />
+            <Pagination count={processAmmountOfPages(props.count)} color="primary" page={page} onChange={handleSetPage} />
           </Grid> : ''
         }
       </Grid>

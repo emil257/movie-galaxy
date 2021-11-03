@@ -1,7 +1,7 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import {searchMovies, getTrendingMovies } from 'actions'
-import { Typography, Box, IconButton, Tooltip,Grid  } from '@mui/material'
+import { Typography, Box, IconButton, Tooltip  } from '@mui/material'
 import SearchInput from './inputs/searchInput'
 import MovieResultsGrid from '../../../components/MovieResluts/MovieResultsGrid'
 import {Clear, TrendingUp, Search} from '@mui/icons-material'
@@ -21,6 +21,9 @@ export default function HomePage() {
   const dispatch = useDispatch()
   const [searchText, setSearchText] = React.useState('')
   const [page, setPage] = React.useState(1)
+
+  const movieResults = useSelector(state => state.Movies.movieResults)
+  const movieResultsCount = useSelector(state => state.Movies.movieResultsCount)
 
   React.useEffect(() => {
     dispatch(getTrendingMovies())
@@ -44,16 +47,21 @@ export default function HomePage() {
 
   return (
     <>
-      <Grid
-        container
+      <Box
+        sx={{
+          display:  'flex',
+          alignItems: {xs: 'flex-start', sm: 'center'},
+          justifyContent: 'space-between',
+          flexDirection: {xs: 'column-reverse', sm: 'row'}
+        }}
       >
-        <Grid item xs={12} sm={8} >
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center'
-            }}
-          >
+        <Box
+          sx={{
+            marginTop: {xs: '15px', sm: 0},
+            display: 'flex',
+            alignItems: 'center'
+          }}
+        >
             {searchText === '' ?  <TrendingUp color="dark" /> :  <Search color="primary" />}
             <Typography variant="h6">
               <span className={classes.title}>{searchText === '' ? 'Trending' : `Search results for "${searchText}"`}</span>
@@ -67,21 +75,9 @@ export default function HomePage() {
               }
             </Typography>
           </Box>
-        </Grid>
-        {/* <Grid xs={12} sm={0}>123</Grid> */}
-        <Grid item xs={12} sm={4}>
-          <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'flex-end'
-              }}
-            >
-            <SearchInput handleSearch={handleSearch} value={searchText}/>
-          </Box>
-        </Grid>
-      </Grid>
-      <MovieResultsGrid page={page} handleSetPage={handleSetPage}/>
+        <SearchInput handleSearch={handleSearch} value={searchText}/>
+      </Box>
+      <MovieResultsGrid page={page} handleSetPage={handleSetPage} movies={movieResults} count={movieResultsCount}/>
     </>
   )
 }

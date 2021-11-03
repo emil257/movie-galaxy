@@ -2,7 +2,16 @@ import React from 'react'
 import {TextField, IconButton} from '@mui/material';
 import {SearchOutlined} from '@mui/icons-material'
 
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles({
+  searchFeild: {
+    maxWidth: 400
+  }
+});
+
 export default function SearchInput(props) {
+  const classes = useStyles()
 
   const [text, setText] = React.useState(props.value)
 
@@ -18,7 +27,8 @@ export default function SearchInput(props) {
 
   return (
     <TextField
-    fullWidth
+      className={classes.searchFeild}
+      fullWidth
       size="small"
       value={text}
       placeholder="Search..."
