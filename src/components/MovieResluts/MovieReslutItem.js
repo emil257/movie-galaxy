@@ -42,7 +42,7 @@ export default function MovieReslutItem(props) {
           component="img"
           height="440"
           image={`https://image.tmdb.org/t/p/w500${props.movie.poster_path}`}
-          alt="green iguana"
+          alt={props.movie.title}
         />
        <MovieResultsItemActions {...props}/>
       </Card>

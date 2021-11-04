@@ -29,7 +29,7 @@ export const INIT_STATE = {
   loading: false
 };
 
-export default (state = INIT_STATE, action) => {
+const movieReducer = (state = INIT_STATE, action) => {
   switch (action.type) {
     case MOVIE_ON_START_SEARCH: {
       console.log("MOVIE_ON_START_SEARCH", action.payload)
@@ -171,3 +171,4 @@ export default (state = INIT_STATE, action) => {
       return state 
   }
 }
+export default movieReducer
