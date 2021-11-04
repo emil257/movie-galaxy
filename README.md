@@ -1,4 +1,4 @@
 # Welcome to MovieGalaxy
 
 ## Demo
-`npm test`
+`https://emil257.github.io/movie-galaxy/`
