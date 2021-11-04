@@ -106,7 +106,7 @@ export default function AlertDialogSlide(props) {
           <MovieResultsItemActions {...props}/>
         </div>
         <DialogTitle className={classes.movieTitle}>{currentMovie.title}</DialogTitle>
-        <DialogContent>
+        <DialogContent data-testid="movie-dialog">
           <Grid container spacing={2}>
             <Grid item xs={12} sm={8} md={9}>
               <DialogContentText id="alert-dialog-slide-description">

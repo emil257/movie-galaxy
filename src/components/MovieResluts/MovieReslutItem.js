@@ -33,10 +33,11 @@ export default function MovieReslutItem(props) {
 
   return (
     <>
-    <Grid item lg={3} md={4} sm={6} xs={12}>
+    <Grid item lg={3} md={4} sm={6} xs={12} data-testid="movie-grid-child">
       <Card className={classes.card} >
         <CardMedia
           className={classes.cardMedia}
+          data-testid={'movie-cardmedia-'+props.movie.id}
           onClick={handleGetMovieDetails}
           component="img"
           height="440"

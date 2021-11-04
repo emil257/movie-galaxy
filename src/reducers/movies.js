@@ -19,7 +19,7 @@ import {
   MOVIE_ON_REMOVE_FROM_WATCHLIST
 } from '../constants/actionTypes'
 
-const INIT_STATE = {
+export const INIT_STATE = {
   movieResults: [],
   movieResultsCount: 0,
   movieFavoritesArr: [],
@@ -29,7 +29,7 @@ const INIT_STATE = {
   loading: false
 };
 
-const reducerSwitch = (state = INIT_STATE, action) => {
+export default (state = INIT_STATE, action) => {
   switch (action.type) {
     case MOVIE_ON_START_SEARCH: {
       console.log("MOVIE_ON_START_SEARCH", action.payload)
@@ -171,4 +171,3 @@ const reducerSwitch = (state = INIT_STATE, action) => {
       return state 
   }
 }
-export default reducerSwitch
