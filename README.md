@@ -1,4 +1,3 @@
 # Welcome to MovieGalaxy
 
-## Demo
-### http
+Demo ### `npm test`
