@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/movie-galaxy/static/js/main.c117bad4.chunk.js",
+    "main.js.map": "/movie-galaxy/static/js/main.c117bad4.chunk.js.map",
+    "runtime-main.js": "/movie-galaxy/static/js/runtime-main.ecc22145.js",
+    "runtime-main.js.map": "/movie-galaxy/static/js/runtime-main.ecc22145.js.map",
+    "static/js/2.40e7e734.chunk.js": "/movie-galaxy/static/js/2.40e7e734.chunk.js",
+    "static/js/2.40e7e734.chunk.js.map": "/movie-galaxy/static/js/2.40e7e734.chunk.js.map",
+    "index.html": "/movie-galaxy/index.html",
+    "static/js/2.40e7e734.chunk.js.LICENSE.txt": "/movie-galaxy/static/js/2.40e7e734.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ecc22145.js",
+    "static/js/2.40e7e734.chunk.js",
+    "static/js/main.c117bad4.chunk.js"
+  ]
+}
